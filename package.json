@@ -1,0 +1,27 @@
+{
+  "name": "guid",
+  "version": "0.0.1",
+  "description": "全局唯一标识符（GUID，Globally Unique Identifier），由微软对UUID的标准算法实现，生成一个二进制长度为128位的数字标识符",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "doc",
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sworlife/guid.git"
+  },
+  "keywords": [
+    "guid"
+  ],
+  "author": "https://github.com/sworlife",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sworlife/guid/issues"
+  },
+  "homepage": "https://github.com/sworlife/guid#readme"
+}

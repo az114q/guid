@@ -1,0 +1,1 @@
+export const uuidMode_v4 = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";
