@@ -1,5 +1,3 @@
-import { uuidMode_v4 } from './consts';
-
 /*\
   * Returns RFC4122, version 4 
   * 代码来源：
@@ -36,20 +34,16 @@ import { uuidMode_v4 } from './consts';
  * 根据version 4规则，第13个数字为4，第17个数字取值范围位8-11
  * r & 3: 满足规则1，值域为：0-3之间。
  * r & 3 | 8: 满足规则2，且r&3的值肯定小于8，因此值域为：8+0 - 8+3之间
-    
 \*/
-const createUUID = ((uuidRegEx, uuidReplacer) => {
-  const uuidRegEx = /[xy]/g;
-  const uuidReplacer = c => {
-    // 利用 |0 运算取整，保证了r的值域为：0-15
-    const r = Math.random() * 16 | 0;
-    const v = c == "x" ? r : (r & 3 | 8);
-    return v.toString(16);
-  }
+const uuidRegEx = /[xy]/g;
+const uuidReplacer = (c, index) => {
+  // 利用 |0 运算取整，保证了r的值域为：0-15
+  const r = Math.random() * 16 | 0;
+  const v = c == "x" ? r : (r & 3 | 8);
+  return v.toString(16);
+}
+function v4() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(uuidRegEx, uuidReplacer).toUpperCase();
+};
 
-  return () => {
-    return uuidMode_v4.replace(uuidRegEx, uuidReplacer).toUpperCase();
-  };
-})();
-
-export default createUUID
+export default v4

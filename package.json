@@ -9,7 +9,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "webpack",
+    "example": "http-server -p 8880",
+    "start": "webpack-dev-server --watch --config webpack.config.example.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,17 @@
   "bugs": {
     "url": "https://github.com/sworlife/guid/issues"
   },
-  "homepage": "https://github.com/sworlife/guid#readme"
+  "homepage": "https://github.com/sworlife/guid#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "inline-source-map": "^0.6.2",
+    "jsx-loader": "^0.13.2",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
 }

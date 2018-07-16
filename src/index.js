@@ -55,5 +55,70 @@
   * 二、使用伪随机数生成器
   * 三、使用加密散列和应用程序提供的文本字符串。
 \*/
+import { getTimestamp, getClockSequence, getNode } from './lib'
+import v1 from './v1';
+import v4 from './v4';
+
+class UUID {
+  constructor() {
+    this.timestamp = getTimestamp();
+    this.clockSequence = getClockSequence();
+    this.node = getNode()
+  }
+  createV1() {
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    console.log(v1({
+      nodeNumber: this.node.v1
+    }))
+    // return v1(option)
+  }
+  createV4() {
+    return v4()
+  }
+}
+const uuid = new UUID()
+
+const root = document.getElementById('root')
 
 
+root.innerHTML = `<button id='btn1'>v1</button><button id='btn4'>v4</button>`;
+const btn1 = document.getElementById('btn1')
+const btn4 = document.getElementById('btn4')
+btn1.addEventListener('click', function(){
+  uuid.createV1()
+});
+btn4.addEventListener('click', function(){
+  uuid.createV4()
+});
